@@ -5,7 +5,7 @@ Created on Tue May 12 17:06:43 2020
 @author: dimit
 """
 from sklearn.metrics import r2_score, median_absolute_error, mean_absolute_error
-from sklearn.metrics import median_absolute_error, mean_squared_error, mean_squared_log_error
+from sklearn.metrics import mean_absolute_error, median_absolute_error, mean_squared_error, mean_squared_log_error
 
 from scipy.optimize import minimize
 import statsmodels.tsa.api as smt
@@ -21,7 +21,10 @@ sns.set()
 
 import numpy as np
 
-edata = pd.read_csv("energydata_complete.csv", index_col = ["date"], parse_dates = ["date"])
+edata = pd.read_csv("energydata_complete.csv", 
+        index_col = ["date"], 
+        parse_dates = ["date"])
+        
 plt.plot(edata.T2)
 edata.head(50)
 plt.figure(figsize=(17, 8))
